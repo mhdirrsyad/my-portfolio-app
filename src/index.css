@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --max-width-screen: 1440px;
+    --font-fira: 'Fira Code', cursive;
+    --font-fira-sans: "Fira Sans", sans-serif;
+
+    /* Font size */
+    --text-links: clamp(0.875rem, 2vw ,1rem);
+    --leading-links: clamp(1.25rem, 2.5vw, 1.5rem);
+    --text-h1: clamp(2.75rem, 5vw, 3.563rem);
+    --leading-h1: clamp(3.25rem, 5.5vw, 4rem);
+    --text-h2: clamp(2.125rem, 4vw,2.813rem);
+    --leading-h2: clamp(1.75rem, 4.5vw,3.25rem);
+    --text-h3: clamp(1.75rem, 3.5vw ,2.25rem);
+    --leading-h3: clamp(2.25rem, 4vw, 2.75rem);
+    --text-h4: clamp(1.5rem, 3vw, 1.75rem);
+    --leading-h4: clamp(2rem, 3.5vw, 2.25rem);
+    --text-h5: clamp(1.125rem, 2.5vw, 1.25rem);
+    --leading-h5: clamp(1.5rem, 3vw, 1.75rem);
+    --text-p: clamp(0.875rem, 2vw, 1rem);
+    --leading-p: clamp(1.25rem, 2.5vw, 1.5rem);
+    --text-category: clamp(0.625rem ,2vw, 0.75rem);
+    --leading-category: clamp(1rem, 2vw, 1.5rem);
+
+    /* Theme Colors */
+    --color-background-theme: #FAF0E6;
+    --color-black-theme: #191A23;
+    --color-hover-theme: #EFE4D5;
+    --color-inactive-theme: #60637B;
+    --color-blue-theme: #2973B2;
+    --color-border-theme: #60637B;
+    --color-gray-theme: #EEEDEB;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+}
+
+@layer components {
+    .button-lg {
+        @apply h-[56px] lg:h-[64px] px-4 lg:px-6 grid place-items-center bg-blue-theme w-max text-h5 leading-h5 text-white cursor-pointer font-semibold border rounded-[12px] border-black-theme translate-[-5px] hover:translate-0 transition-transform duration-300
+    }
+
+    .button-sm {
+        @apply h-[40px] lg:h-[48px] px-3 lg:px-4 grid place-items-center bg-blue-theme w-full sm:w-max text-links leading-links text-white cursor-pointer font-semibold border rounded-[8px] border-black-theme translate-[-5px] hover:translate-0 transition-transform duration-300
+    }
+
+    .button-slider {
+        @apply cursor-pointer md:w-[52px] md:h-[52px] lg:w-[64px] lg:h-[64px] xl:w-[72px] xl:h-[72px] bg-blue-theme rounded-full flex justify-center items-center border-1 border-black-theme translate-[-5px] hover:translate-0 transition-transform duration-300
+    }
+
+    .button-link {
+        @apply cursor-pointer w-max text-links font-semibold flex gap-2 items-center
+    }
+
+    .line-lg {
+        @apply h-[2px] lg:h-[3px] rounded-[2px] bg-[repeating-linear-gradient(to_right,#60637B_0px,#60637B_20px,transparent_20px,transparent_40px)];
+    }
+
+    .line-sm {
+        @apply h-[1.5px] rounded-[2px] bg-[repeating-linear-gradient(to_right,#60637B_0px,#60637B_12px,transparent_12px,transparent_20px)];
+    }
+
+    .swiper-slide {
+        @apply p-2
+    }
+}
