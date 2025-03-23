@@ -1,5 +1,7 @@
 # Portfolio Website
 
+![Thumbnail](public/thumbnail.png)
+
 ## Version 1.0.0
 
 This is the first version (v1.0.0) of my portfolio website, built with a Neobrutalism theme. At this stage, the website serves as a simple showcase of my work without any animations.

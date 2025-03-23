@@ -26,6 +26,7 @@ const About = () => {
               text="View my work"
               size="large"
               ariaLabel="View my work button"
+              href="#my_project"
             />
           </div>
         </div>

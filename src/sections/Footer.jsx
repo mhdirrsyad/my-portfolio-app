@@ -33,7 +33,7 @@ const Footer = () => {
             {/* Social Logos */}
             <div className="flex flex-row gap-4 lg:gap-5">
               {socialFooterData.map((socialDataItem, index) => (
-                <a key={index} href={socialDataItem.link}>
+                <a key={index} href={socialDataItem.link} target="_blank">
                   <img
                     src={socialDataItem.icon}
                     alt={socialDataItem.name}
