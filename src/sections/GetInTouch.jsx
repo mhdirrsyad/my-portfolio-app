@@ -66,7 +66,7 @@ const GetInTouch = () => {
     <section
       id="get_in_touch"
       ref={getInTouchRef}
-      className="bg-[url('background/bg_dots_image.png')] bg-repeat w-full"
+      className="bg-[url('/background/bg_dots_image.png')] bg-repeat w-full"
     >
       {/* Line */}
       <Line type="large" />
