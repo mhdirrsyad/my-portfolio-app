@@ -21,38 +21,79 @@ const Hamburger = () => {
           aria-hidden="true"
           focusable="false"
         >
-          <g id="Hamburger">
+          <g id="hamburger">
             <g>
-              <g id="first_line">
-                <rect
-                  className={`${isMenuOpen ? "rotate-45 origin-center translate-y-[125px] -translate-x-[125px]" : "rotate-0 origin-center translate-y-0 -translate-x-0"} transition-transform duration-500`}
-                  y="0"
-                  width="512"
-                  height="50"
-                  rx="25"
-                  ry="25"
-                />
-              </g>
-              <g id="second_line">
-                <rect
-                  className={`${isMenuOpen ? "opacity-0 origin-center scale-0" : "opacity-100 origin-center scale-100"} transition duration-500`}
-                  y="125"
-                  width="512"
-                  height="50"
-                  rx="25"
-                  ry="25"
-                />
-              </g>
-              <g id="third_line">
-                <rect
-                  className={`${isMenuOpen ? "-rotate-45 origin-center -translate-y-[62.5px] -translate-x-[125px]" : "-rotate-0 origin-center -translate-y-0 -translate-x-0"} transition-transform duration-500`}
-                  y="250"
-                  width="512"
-                  height="50"
-                  rx="25"
-                  ry="25"
-                />
-              </g>
+              {/* First Line */}
+              <rect
+                id="first_line"
+                className="transition-transform ease-in-out duration-500 motion-reduce:transition-none"
+                style={{
+                  WebkitTransform: isMenuOpen
+                    ? "rotate(45deg) translate(0, 125px)"
+                    : "rotate(0deg) translate(0, 0)",
+                  MozTransform: isMenuOpen
+                    ? "rotate(45deg) translate(0, 125px)"
+                    : "rotate(0deg) translate(0, 0)",
+                  OTransform: isMenuOpen
+                    ? "rotate(45deg) translate(0, 125px)"
+                    : "rotate(0deg) translate(0, 0)",
+                  WebkitTransformOrigin: "center",
+                  MozTransformOrigin: "center",
+                  OTransformOrigin: "center",
+                  willChange: "transform",
+                }}
+                y="0"
+                width="512"
+                height="50"
+                rx="25"
+                ry="25"
+              />
+
+              {/* Second Line */}
+              <rect
+                id="second_line"
+                className="transition ease-in-out duration-500 motion-reduce:transition-none"
+                style={{
+                  WebkitTransform: isMenuOpen ? "scale(0.1)" : "scale(1)",
+                  MozTransform: isMenuOpen ? "scale(0.1)" : "scale(1)",
+                  OTransform: isMenuOpen ? "scale(0.1)" : "scale(1)",
+                  WebkitTransformOrigin: "center",
+                  MozTransformOrigin: "center",
+                  OTransformOrigin: "center",
+                  willChange: "opacity, transform",
+                }}
+                y="125"
+                width="512"
+                height="50"
+                rx="25"
+                ry="25"
+              />
+
+              {/* Third Line */}
+              <rect
+                id="third_line"
+                className="transition-transform ease-in-out duration-500 motion-reduce:transition-none"
+                style={{
+                  WebkitTransform: isMenuOpen
+                    ? "rotate(-45deg) translate(0, -125px)"
+                    : "rotate(0deg) translate(0, 0)",
+                  MozTransform: isMenuOpen
+                    ? "rotate(-45deg) translate(0, -125px)"
+                    : "rotate(0deg) translate(0, 0)",
+                  OTransform: isMenuOpen
+                    ? "rotate(-45deg) translate(0, -125px)"
+                    : "rotate(0deg) translate(0, 0)",
+                  WebkitTransformOrigin: "center",
+                  MozTransformOrigin: "center",
+                  OTransformOrigin: "center",
+                  willChange: "transform",
+                }}
+                y="250"
+                width="512"
+                height="50"
+                rx="25"
+                ry="25"
+              />
             </g>
           </g>
         </svg>

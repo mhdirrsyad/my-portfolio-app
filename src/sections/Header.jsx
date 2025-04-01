@@ -99,7 +99,7 @@ const Header = () => {
 
             {/* Overlay */}
             <div
-              className={`fixed inset-0 transition-colors duration-300 -z-10 ${isMenuOpen ? "visible bg-black/20" : "invisible"}`}
+              className={`fixed inset-0 transition-colors duration-300 -z-10 ${isMenuOpen ? "visible bg-black/20" : "invisible"} motion-reduce:transition-none`}
               onClick={() => setIsMenuOpen(false)}
               aria-hidden={!isMenuOpen}
             ></div>
