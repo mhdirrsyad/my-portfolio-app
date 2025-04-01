@@ -4,7 +4,7 @@ import LinkButton from "../atoms/button-components/LinkButton.jsx";
 
 const Card = ({ myProject }) => {
   return (
-    <div className="bg-black-theme rounded-[24px]">
+    <div className="card bg-black-theme rounded-[24px]">
       <div className="w-full border-1 border-black-theme rounded-[24px] overflow-hidden bg-white -translate-[6px]">
         {/* Image */}
         <img

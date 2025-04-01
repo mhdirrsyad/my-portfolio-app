@@ -4,7 +4,10 @@ import Button from "../atoms/button-components/Button.jsx";
 
 const FormGetInTouch = () => {
   return (
-    <form className="w-full lg:max-w-[585px] space-y-5 md:space-y-6">
+    <form
+      id="right-get-in-touch"
+      className="w-full lg:max-w-[585px] space-y-5 md:space-y-6"
+    >
       <div className="flex flex-col md:flex-row w-full gap-4 md:gap-6">
         <InputForm
           label="Name"
@@ -13,6 +16,7 @@ const FormGetInTouch = () => {
           type="text"
           placeholder="Your name"
           inputType="input"
+          required={true}
         />
         <InputForm
           label="Email"
@@ -21,6 +25,7 @@ const FormGetInTouch = () => {
           type="email"
           placeholder="Your email"
           inputType="input"
+          required={true}
         />
       </div>
       <div className="flex flex-col md:flex-row w-full gap-4 md:gap-6">
@@ -34,6 +39,7 @@ const FormGetInTouch = () => {
             { option: "App Design", value: "App Design" },
           ]}
           defaultOption="project"
+          required={true}
         />
         <SelectForm
           label="Budget"
@@ -45,6 +51,7 @@ const FormGetInTouch = () => {
             { option: "Rp5.000.000+", value: "5000000+" },
           ]}
           defaultOption="budget"
+          required={true}
         />
       </div>
       <InputForm
@@ -54,13 +61,14 @@ const FormGetInTouch = () => {
         type="project-details"
         placeholder="Your project details"
         inputType="textarea"
+        required={true}
       />
       <div className="flex sm:justify-end w-full">
         <Button
           size="small"
           ariaLabel="Get in Touch Button"
           text="Get in touch"
-          href="#"
+          type="submit"
         />
       </div>
     </form>

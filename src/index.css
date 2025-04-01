@@ -37,11 +37,15 @@
 
 @layer base {
     html {
-        scroll-behavior: smooth;
+        @apply scroll-smooth;
     }
 
     body {
-        overflow-x: hidden;
+        @apply overflow-x-hidden;
+    }
+
+    svg {
+        @apply overflow-visible;
     }
 }
 
@@ -72,5 +76,31 @@
 
     .swiper-slide {
         @apply p-2
+    }
+}
+
+@layer utilities {
+    #about-image {
+        @apply sm:w-[492px] md:w-[520px] lg:w-[492px]
+    }
+
+    #about-image #about-image-group {
+        @apply -translate-[6px]
+    }
+
+    #about-image #available-hire-content {
+        @apply -translate-[2px]
+    }
+
+    #frontend-web-image, #ui-design-image, #motion-design-web-image {
+        @apply max-w-[200px] md:max-w-[240px] lg:max-w-[256px]
+    }
+
+    #frontend-web-image #frontend-web-background, #ui-design-image #ui-design-background, #motion-design-web-image #motion-design-background {
+        @apply drop-shadow-[5px_5px_0px_#191A23]
+    }
+
+    #frontend-web-image #frontend-web-vector, #ui-design-image #ui-design-vector, #motion-design-web-image #motion-design-web-vector {
+        @apply drop-shadow-[2px_2px_0px_#191A23]
     }
 }

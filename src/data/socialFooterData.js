@@ -16,7 +16,7 @@ export const socialFooterData = [
   },
   {
     name: "Instagram Icon",
-    link: "#",
+    link: "https://www.instagram.com/irsyadfd/",
     icon: "/footer/social_logos/instagram.svg",
   },
 ];

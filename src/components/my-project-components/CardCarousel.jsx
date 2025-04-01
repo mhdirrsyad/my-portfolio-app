@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { myProjectContent } from "../../data/myProjectContent.js";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Card from "./Card.jsx";
 import NavigationButton from "../atoms/button-components/NavigationButton.jsx";
 import "swiper/css";
@@ -12,13 +12,6 @@ const CardCarousel = () => {
   const [slidesPerGroup, setSlidesPerGroup] = useState(0);
   const [totalBullets, setTotalBullets] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
-
-  useEffect(() => {
-    if (slidesPerGroup > 0) {
-      const totalSlides = swiperRef.current.slides.length;
-      setTotalBullets(Math.ceil(totalSlides / slidesPerGroup));
-    }
-  }, [slidesPerGroup]);
 
   return (
     <div>
@@ -58,6 +51,11 @@ const CardCarousel = () => {
           onBreakpoint={(swiper) => {
             swiper.update();
             setSlidesPerGroup(swiper.params.slidesPerGroup);
+
+            const totalSlides = swiper.slides.length;
+            setTotalBullets(
+              Math.ceil(totalSlides / swiper.params.slidesPerGroup),
+            );
           }}
           onSlideChange={(swiper) => {
             setActiveIndex(
@@ -72,14 +70,14 @@ const CardCarousel = () => {
           ))}
         </Swiper>
         {/* Navigation */}
-        <div className="absolute hidden top-1/2 md:flex justify-between md:-left-4 md:-right-4 lg:-left-6 lg:-right-6">
-          <NavigationButton type="next" swiperRef={swiperRef} />
+        <div className="absolute hidden top-1/2 -translate-y-1/2 z-5 md:flex justify-between md:-left-4 md:-right-4 lg:-left-6 lg:-right-6">
           <NavigationButton type="prev" swiperRef={swiperRef} />
+          <NavigationButton type="next" swiperRef={swiperRef} />
         </div>
       </div>
 
       {/* Pagination */}
-      <div className="flex flex-row gap-4 md:gap-5 w-full justify-center mt-8 lg:mt-12">
+      <div className="pagination-btns flex flex-row gap-4 md:gap-5 w-full justify-center mt-8 lg:mt-12">
         {Array.from({ length: totalBullets }).map((_, index) => (
           <PaginationButton
             key={index}

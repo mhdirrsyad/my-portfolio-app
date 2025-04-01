@@ -5,6 +5,7 @@ const InputForm = ({
   name,
   placeholder,
   inputType,
+  required,
 }) => {
   return (
     <div className="flex flex-col gap-1 w-full">
@@ -23,6 +24,7 @@ const InputForm = ({
             placeholder={placeholder}
             className="text-p leading-p font-fira-sans px-2 py-3 rounded-[8px] border-1 border-border-theme bg-white text-black-theme"
             aria-label={`Input ${label}`}
+            required={required}
           />
         </>
       ) : inputType === "textarea" ? (
@@ -39,6 +41,7 @@ const InputForm = ({
             rows={4}
             placeholder={placeholder}
             className="text-p leading-p font-fira-sans px-2 py-3 rounded-[8px] border-1 border-border-theme bg-white text-black-theme"
+            required={required}
           ></textarea>
         </>
       ) : (

@@ -1,13 +1,17 @@
 import NavigationLinks from "../components/header-components/NavigationLinks.jsx";
-import { getWindowDimensions } from "../utils/getWindowDimensions.js";
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import Hamburger from "../components/header-components/Hamburger.jsx";
-import { useNavContext } from "../context/NavContext.jsx";
+import { useNavContext } from "../context/HeaderContext.jsx";
+import { useWindowSize } from "../hooks/useWindowSize.js";
+import HeaderLogo from "../components/atoms/svg-components/HeaderLogo.jsx";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(useGSAP);
 
 const Header = () => {
+  const scrollIndicatorRef = useRef(null);
   const {
-    windowSize,
-    setWindowSize,
     isMenuOpen,
     setIsMenuOpen,
     scroll,
@@ -16,9 +20,7 @@ const Header = () => {
     handleNavActiveLink,
   } = useNavContext();
 
-  const handleWindowResize = useCallback(() => {
-    setWindowSize(getWindowDimensions());
-  }, []);
+  const windowSize = useWindowSize();
 
   const handleScroll = useCallback(() => {
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
@@ -30,23 +32,47 @@ const Header = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleNavActiveLink);
-    window.addEventListener("resize", handleWindowResize);
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleNavActiveLink);
-      window.removeEventListener("resize", handleWindowResize);
       window.removeEventListener("scroll", handleScroll);
     };
   }, [windowSize]);
+
+  // GSAP - Animate Scroll Indicator
+  useGSAP(
+    () => {
+      let mm = gsap.matchMedia();
+
+      mm.add(
+        {
+          isAnyScreen: "(min-width: 0px)",
+          reduceMotion: "(prefers-reduced-motion: reduce)",
+        },
+        (context) => {
+          let { reduceMotion } = context.conditions;
+
+          if (!reduceMotion) {
+            gsap.to(scrollIndicatorRef.current, {
+              duration: 0.1,
+              ease: "none",
+              width: scroll + "%",
+            });
+          }
+        },
+      );
+    },
+    { scope: scrollIndicatorRef, dependencies: [scroll] },
+  );
 
   return (
     <header className="fixed z-10 top-0 left-0 right-0 bg-background-theme">
       {/* Scroll Indicator */}
       {!isMenuOpen && (
         <div
-          className="absolute bottom-0 translate-y-full h-[6px] bg-black-theme"
-          style={{ width: `${scroll}%` }}
+          ref={scrollIndicatorRef}
+          className={`indicator absolute bottom-0 translate-y-full h-[6px] bg-black-theme ${scroll !== 100 ? "rounded-full" : ""}`}
           aria-hidden="true"
         ></div>
       )}
@@ -62,11 +88,9 @@ const Header = () => {
           className="cursor-pointer"
           aria-label="Go to Home"
         >
-          <img
-            src="/logos/header_logo.svg"
-            alt="Header Logo"
-            className="w-40 md:size-max"
-          />
+          <div className="w-44 lg:w-60">
+            <HeaderLogo />
+          </div>
         </a>
         {windowSize.width <= 768 ? (
           <>

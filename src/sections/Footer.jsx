@@ -8,7 +8,7 @@ const Footer = () => {
           {/* Footer Logo */}
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start md:flex-col gap-6">
             <img
-              src="logos/footer_logo.svg"
+              src="footer/footer_logo.svg"
               alt="Footer Logo"
               className="w-50 md:size-max"
             />
@@ -37,7 +37,7 @@ const Footer = () => {
                   <img
                     src={socialDataItem.icon}
                     alt={socialDataItem.name}
-                    className="w-8 lg:w-max"
+                    className="w-8 lg:w-max hover:rotate-45 transition-transform duration-300"
                   />
                 </a>
               ))}

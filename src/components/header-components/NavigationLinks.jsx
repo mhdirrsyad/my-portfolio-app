@@ -1,5 +1,5 @@
 import { navLinkContent } from "../../data/navLinkContent.js";
-import { useNavContext } from "../../context/NavContext.jsx";
+import { useNavContext } from "../../context/HeaderContext.jsx";
 
 const NavigationLinks = () => {
   const { isMenuOpen, activeItemLink, handleMenuItemLinkClick } =

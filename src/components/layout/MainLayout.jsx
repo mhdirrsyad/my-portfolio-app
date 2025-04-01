@@ -1,4 +1,4 @@
-import { NavProvider } from "../../context/NavContext.jsx";
+import { NavProvider } from "../../context/HeaderContext.jsx";
 import Header from "../../sections/Header.jsx";
 import Footer from "../../sections/Footer.jsx";
 

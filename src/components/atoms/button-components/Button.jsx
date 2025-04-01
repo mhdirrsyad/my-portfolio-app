@@ -1,7 +1,8 @@
-const Button = ({ text, size, ariaLabel, href }) => {
+const Button = ({ text, size, ariaLabel, href, type }) => {
   return (
     <button
       aria-label={ariaLabel}
+      type={type}
       className={`${size === "large" ? "rounded-[12px]  w-max" : size === "small" ? "rounded-[8px] w-full sm:w-max" : ""} bg-black-theme`}
     >
       <a

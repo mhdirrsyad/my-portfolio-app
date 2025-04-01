@@ -1,16 +1,21 @@
-# Portfolio Website
+# My Portfolio Website - Neo Brutalism Theme
 
 ![Thumbnail](public/thumbnail.png)
 
-## Version 1.0.0
+## Version 2.0.0
+This is the second major update (v2.0.0) of my portfolio website! 
+Now featuring:
+- **GSAP animations** for smoother interactions
+- **Improved SVG images** for better quality and performance
+- Other refinements to enhance the user experience
 
-This is the first version (v1.0.0) of my portfolio website, built with a Neobrutalism theme. At this stage, the website serves as a simple showcase of my work without any animations.
+## NOTE ⚠️
+The **Get in Touch** form is **not yet functional** in this version. It is currently a frontend-only section and will be activated in a future update.
 
-## Future Updates (v2.0.0 / Major Update)
+## Future Updates
+For the next major update, I plan to introduce:
+- **Functional contact form**: Visitors will be able to reach out to me directly through the website.
+- **Enhanced SVG animations**: Bringing SVG graphics to life with custom animations.
+- Additional improvements to refine the UI/UX experience.
 
-For the next major update (v2.0.0), I plan to introduce:
-
-GSAP animations for smoother interactions.
-1. Improved SVG images for better quality and performance.
-2. Other enhancements to refine the user experience.
-3. Stay tuned for upcoming updates! 🚀
+Stay tuned for more updates! 🚀

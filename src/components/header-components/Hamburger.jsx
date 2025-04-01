@@ -1,5 +1,5 @@
 import NavigationLinks from "./NavigationLinks.jsx";
-import { useNavContext } from "../../context/NavContext.jsx";
+import { useNavContext } from "../../context/HeaderContext.jsx";
 
 const Hamburger = () => {
   const { handleMenuOpen, isMenuOpen } = useNavContext();
