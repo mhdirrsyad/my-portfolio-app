@@ -81,7 +81,7 @@ const Services = () => {
     <section
       ref={servicesRef}
       id="services"
-      className="bg-[url('background/bg_dots_image.png')] bg-repeat w-full"
+      className="bg-[url('/background/bg_dots_image.png')] bg-repeat w-full"
     >
       {/* Line */}
       <Line type="large" />
