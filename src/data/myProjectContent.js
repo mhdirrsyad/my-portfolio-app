@@ -5,7 +5,7 @@ export const myProjectContent = [
     description:
       "– A sleek React & Tailwind CSS web app showcasing my skills, projects, and UI/UX expertise.",
     image: "/cards/portfolio_app.png",
-    link: "#",
+    link: "https://www.figma.com/design/qQIYbxrjRNGQ3zXNzIcaI2/Portfolio-Website-Project?node-id=0-1&t=QN8rVE2OZS5IVBDn-1",
   },
   {
     title: "Kodingku Learning App",
@@ -13,7 +13,7 @@ export const myProjectContent = [
     description:
       "– A modern UI/UX-focused platform for interactive coding lessons and skill development.",
     image: "/cards/kodingku_app.png",
-    link: "https://medium.com/@mohammadirsyad02/ux-case-study-learning-app-7fc5546ac632",
+    link: "https://www.figma.com/design/KnS2viFyQZnJ5PvHrTATNE/Aplikasi-Kodingku---UX-Case-Study-1?node-id=51-648&t=JIb3z0m19qjegd7T-1",
   },
   {
     title: "Atjeh Catshop App",
@@ -21,7 +21,7 @@ export const myProjectContent = [
     description:
       "– A modern marketplace app for cat lovers, with seamless UI/UX for sellers and buyers. 🐾.",
     image: "/cards/atjeh_catshop_app.png",
-    link: "https://repositori.usu.ac.id/handle/123456789/87778",
+    link: "https://www.figma.com/design/je0D7w7H0y0CGumO8a2MnC/Atjeh-Catshop?node-id=1-3&t=1tIhzMWBNEPxhQnS-1",
   },
   {
     title: "Dirgo Fast Food App Research",
