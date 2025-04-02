@@ -96,11 +96,11 @@
         @apply max-w-[200px] md:max-w-[240px] lg:max-w-[256px]
     }
 
-    #frontend-web-image #frontend-web-background, #ui-design-image #ui-design-background, #motion-design-web-image #motion-design-background {
-        @apply drop-shadow-[5px_5px_0px_#191A23]
+    #frontend-web-image #frontend-web-group, #ui-design-image #ui-design-group, #motion-design-web-image #motion-design-web-group {
+        @apply -translate-[5px]
     }
 
-    #frontend-web-image #frontend-web-vector, #ui-design-image #ui-design-vector, #motion-design-web-image #motion-design-web-vector {
-        @apply drop-shadow-[2px_2px_0px_#191A23]
+    #frontend-web-vector-group #frontend-web-vector, #ui-design-vector-group #ui-design-vector, #motion-design-web-vector-group #motion-design-web-vector {
+        @apply -translate-[2px]
     }
 }

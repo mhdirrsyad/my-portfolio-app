@@ -10,7 +10,8 @@ Now featuring:
 - Other refinements to enhance the user experience
 
 ## NOTE ⚠️
-The **Get in Touch** form is **not yet functional** in this version. It is currently a frontend-only section and will be activated in a future update.
+- The **Get in Touch** form is **not yet functional** in this version. It is currently a frontend-only section and will be activated in a future update.
+- Dark mode is not yet available in this version.
 
 ## Future Updates
 For the next major update, I plan to introduce:
